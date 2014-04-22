@@ -1,44 +1,32 @@
-/* encher linguiça dps nesse cabeçlho*/
-
 #ifndef CALCULADORA_H
 #define CALCULADORA_H
-#include<stdio.h>
-typedef int elem;
 
-
-//A struct que vai conter os digitos que representam o número inserido
 typedef struct no{
-	
-	elem digito;
+	int digito;//recebe o digito a ser inserido
 	struct no *prox;
-}No;
+}NO;
 
-typedef struct LISTA{
-	
-	int tam;
+typedef struct lista{
+	int tam;//recebe o tamanho do numero que a lista conterá
 	struct no *head;
-}LISTA;
+}Lista;
 
+void criaLista(Lista *l);
 
-//inicialia a LISTA
-void inicLista(LISTA *p_l);
+void printLista(Lista l);
 
-//verifica se a LISTA está vazia
-int listaVazia(LISTA *p_l);
+void insereLista(Lista *l, int e);
 
-/* Insere um elemento no inicio da LISTA */
-void insereInicio(LISTA *p_l, elem e);
+void insereFim(Lista *l, int e);
 
-/* Insere um elemento no final da LISTA */
-void insereFim(LISTA *p_l, elem e);
+Lista soma(Lista *lista_1, Lista *lista_2);
 
-/* Remove o elemento que esta no final da LISTA.
-   Retorna 0 caso a LISTA esteja vazia */
-int removeFim(LISTA *p_l, elem *p_e);
+void procuraEmprestador(NO *aux);
 
-void libera(LISTA *p_l);
+void subtrai(Lista *lista_1, Lista *lista_2);
 
-/* Exibe o conteudo da LISTA */
-void exibe(LISTA *p_l);
+void multiplica(Lista *lista_1, Lista *lista_2);
+
+void liberaLista(Lista *l);
 
 #endif
